@@ -8,7 +8,7 @@ PrivX is a personal fork of [SearXNG](https://github.com/searxng/searxng) — pa
 
 ## 🔗 Live instance
 
-[**search.yourdomain.com**](https://search.yourdomain.com)
+[**privx-xe63.onrender.com/**](https://privx-xe63.onrender.com/)
 
 This is my personal instance, open for anyone to use. If you want to create your own private search engine , follow the [Getting started](#getting-started) section below.
 
