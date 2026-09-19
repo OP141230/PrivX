@@ -1,9 +1,54 @@
-# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+# https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
 use_default_settings: true
+
+general:
+  instance_name: "PrivX"
+  privacypolicy_url: false
+  donation_url: false
+  contact_url: false
+  enable_metrics: false
+
 server:
-  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
-  secret_key: "ultrasecretkey"  # change this!
-  limiter: false  # enable this when running the instance for a public usage on the internet
+  secret_key: "3469d7bb1718acf6965fe1e4f615960082dee345fcac466d9440fff0913bb1b3"
+  limiter: false
   image_proxy: true
-redis:
+  method: "GET"
+
+# Use the new valkey key (redis: is deprecated in this version of SearXNG)
+valkey:
   url: redis://redis:6379/0
+
+ui:
+  default_locale: "en"
+  query_in_title: true
+  default_theme: simple
+  theme_args:
+    simple_style: auto
+  center_alignment: false
+  results_on_new_tab: false
+  search_on_category_select: true
+  hotkeys: default
+  url_formatting: pretty
+
+search:
+  safe_search: 0
+  autocomplete: "google"
+  autocomplete_min: 2
+  ban_time_on_fail: 5
+  max_ban_time_on_fail: 120
+  default_lang: "en"
+  formats:
+    - html
+    - json
+
+# Tabs shown in UI — values must be null (empty) to match default schema
+categories_as_tabs:
+  general:
+  images:
+  videos:
+  news:
+  map:
+  music:
+  science:
+  files:
+  social media:

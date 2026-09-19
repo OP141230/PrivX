@@ -43,6 +43,16 @@ services:
     volumes:
       - ./searxng:/etc/searxng:rw
       - searxng-data:/var/cache/searxng:rw
+      - ./searxng/custom.css:/usr/local/searxng/searx/static/themes/simple/sxng-ltr.min.css:ro
+      - ./searxng/custom.css:/usr/local/searxng/searx/static/themes/simple/sxng-rtl.min.css:ro
+      - ./searxng/custom.css.gz:/usr/local/searxng/searx/static/themes/simple/sxng-ltr.min.css.gz:ro
+      - ./searxng/custom.css.gz:/usr/local/searxng/searx/static/themes/simple/sxng-rtl.min.css.gz:ro
+      - ./searxng/custom.css.br:/usr/local/searxng/searx/static/themes/simple/sxng-ltr.min.css.br:ro
+      - ./searxng/custom.css.br:/usr/local/searxng/searx/static/themes/simple/sxng-rtl.min.css.br:ro
+      # PrivX branding overrides
+      - ./searxng/templates/simple/base.html:/usr/local/searxng/searx/templates/simple/base.html:ro
+      - ./searxng/templates/simple/page_with_header.html:/usr/local/searxng/searx/templates/simple/page_with_header.html:ro
+      - ./searxng/infopage/en/about.md:/usr/local/searxng/searx/infopage/en/about.md:ro
     environment:
       - SEARXNG_BASE_URL=https://${SEARXNG_HOSTNAME:-localhost}/
     logging:
