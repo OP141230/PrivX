@@ -79,7 +79,7 @@ On macOS:
 sed -i '' "s|^\\\\(\\\\s\\\*secret\\\_key:\\\\s\\\*\\\\).\\\*|\\\\1\\\\"$(openssl rand -hex 32)\\\\"|" searxng/settings.yml
 ```
 
-> \\\[!NOTE]
+> \\\NOTE
 > Windows (PowerShell):
 > ```powershell
 > $randomBytes = New-Object byte\\\[] 32
